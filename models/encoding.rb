@@ -3,7 +3,7 @@ class Encoding
   include Mongoid::Timestamps # adds created_at and updated_at fields
 
   # field <name>, :type => <type>, :default => <value>
-  field :jobs, :type => Array
+  field :params, :type => Hash
   field :input_media_ids, :type => Array
   field :result_media_ids, :type => Array
 
@@ -13,3 +13,4 @@ class Encoding
   # You can create a composite key in mongoid to replace the default id using the key macro:
   # key :field <, :another_field, :one_more ....>
 end
+

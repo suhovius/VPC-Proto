@@ -4,8 +4,8 @@ class Option
 
   # field <name>, :type => <type>, :default => <value>
   field :key, :type => String
-  field :value, :type => String
-  field :param_key_name, :type => String
+  field :value, :type => String, :default => nil
+  field :params_key_name, :type => String, :default => nil
   embedded_in :command
 
   # You can define indexes on documents using the index macro:

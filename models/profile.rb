@@ -12,5 +12,23 @@ class Profile
 
   # You can create a composite key in mongoid to replace the default id using the key macro:
   # key :field <, :another_field, :one_more ....>
+
+  def describe
+    puts "name: #{self.name}"
+    puts "commands (#{self.commands.count}):"
+
+    self.commands.asc(:ordering_number).each do |command|
+      puts "  ordering_number: #{command.ordering_number}"
+      puts "  job_name: #{command.job_name}"
+      puts "  input_from_command_with_number: #{command.input_from_command_with_number}"
+      puts "  create_media: #{command.create_media}"
+      command.options.each do |option|
+        puts "\t key: #{option.key}"
+        puts "\t value: #{option.value}"
+        puts "\t param_key_name: #{option.params_key_name}"
+      end
+    end
+    nil
+  end
 end
 

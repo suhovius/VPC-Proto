@@ -2,7 +2,7 @@
 PADRINO_ENV  = ENV['PADRINO_ENV'] ||= ENV['RACK_ENV'] ||= 'development'  unless defined?(PADRINO_ENV)
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 
-::TMPFILES_DIR = "#{Padrino.root}/tmp"
+::TMPFILES_DIR = "#{PADRINO_ROOT}/tmp"
 
 # Load our dependencies
 require 'rubygems' unless defined?(Gem)

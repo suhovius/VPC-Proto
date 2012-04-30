@@ -8,5 +8,11 @@ class Job::Download < Job::Base
     @media_ids = media_ids
   end
 
+  def perform
+    media_ids.each do |media_id|
+
+    end
+  end
+
 end
 

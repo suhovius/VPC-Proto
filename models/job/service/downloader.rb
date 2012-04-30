@@ -9,14 +9,16 @@ class Job::Downloader < Job::Base
   end
 
   def perform
-    ordering_number = 0
+    output_files_array = []
     media_ids.each do |media_id|
-      ordering_number += 1
       location = Media.find(media_id).location
       extension = File.extname location
-      FileUtils.copy location, "#{self.output_dir}/#{ordering_number}#{extension}"
+      new_file_path = "#{self.output_dir}/#{SecureRandom.uuid}#{extension}"
+      FileUtils.copy(location, new_file_path)
+      raise 'File not exists' unless File.exists? new_file_path
+      output_files_array << new_file_path
     end
-    output_dir
+    output_files_array
   end
 
 end

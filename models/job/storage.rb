@@ -1,4 +1,4 @@
-class Storage
+class TempStorage
 
   PROCESSING_DIR = "#{::TMPFILES_DIR}/encodings"
 

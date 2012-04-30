@@ -6,6 +6,7 @@ class Profile
   field :name, :type => String
   field :jobs, :type => Array
   embeds_many :commands
+  belongs_to :encoding
 
   # You can define indexes on documents using the index macro:
   # index :field <, :unique => true>

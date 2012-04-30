@@ -1,11 +1,12 @@
-class Profile
+class Option
   include Mongoid::Document
   include Mongoid::Timestamps # adds created_at and updated_at fields
 
   # field <name>, :type => <type>, :default => <value>
-  field :name, :type => String
-  field :jobs, :type => Array
-  embeds_many :commands
+  field :key, :type => String
+  field :value, :type => String
+  field :param_key_name, :type => String
+  embedded_in :command
 
   # You can define indexes on documents using the index macro:
   # index :field <, :unique => true>

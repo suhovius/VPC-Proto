@@ -1,4 +1,4 @@
-class Job::Rotator < Job::Processing
+class Job::Rotate < Job::Processing
 
   def perform
     new_file_path = "#{self.output_dir}/#{SecureRandom.uuid}.txt"

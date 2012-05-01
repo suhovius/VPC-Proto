@@ -4,6 +4,8 @@ class Conveyor
 
   @@create_medias_for_jobs = []
 
+  @@new_medias = []
+
   class << self
     def perform(encoding_id)
       encoding = Encoder.find encoding_id
@@ -17,10 +19,13 @@ class Conveyor
         @@create_medias_for_jobs << processing_job if command.create_media
       end
 
-  #    @@create_medias_for_jobs.each do |job|
-  #      job.create_medias
-  #    end
+      @@create_medias_for_jobs
+      @@create_medias_for_jobs.each do |job|
+        @@new_medias << job.create_medias
+        @@new_medias.flatten!
+      end
 
+      encoding.result_media_ids = @@new_medias
       # TODO delete tmpfiles
     end
 

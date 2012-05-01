@@ -4,9 +4,8 @@ class Profile
 
   # field <name>, :type => <type>, :default => <value>
   field :name, :type => String
-  field :jobs, :type => Array
   embeds_many :commands
-  belongs_to :encoding
+  belongs_to :encoder
 
   # You can define indexes on documents using the index macro:
   # index :field <, :unique => true>

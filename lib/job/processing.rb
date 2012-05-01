@@ -18,7 +18,7 @@ class Job::Processing < Job::Base
       extension = File.extname file_path
       new_file_path = "#{Padrino.root}/spec/fixtures/S3_bucket/results/#{SecureRandom.uuid}#{extension}"
       FileUtils.copy(location, new_file_path)
-      medias << Media.create :type => MEDIA_TYPE, :location => new_file_path
+      medias << Media.create(:type => MEDIA_TYPE, :location => new_file_path)
     end
     medias
   end

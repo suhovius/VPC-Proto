@@ -1,4 +1,4 @@
-class Job::Downloader < Job::Base
+class Job::Download < Job::Base
 
   attr :output_dir, :media_ids
 

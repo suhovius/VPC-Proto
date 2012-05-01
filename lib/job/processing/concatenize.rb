@@ -10,6 +10,7 @@ class Job::Concatenize < Job::Processing
           new_file.write file.read
         end
       end
+      new_file.write "With options #{self.options}"
     end
     self.result_files = [new_file_path]
   end

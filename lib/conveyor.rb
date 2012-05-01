@@ -25,7 +25,8 @@ class Conveyor
         @@new_medias.flatten!
       end
 
-      encoding.result_media_ids = @@new_medias
+      encoding.result_media_ids = @@new_medias.map(&:id)
+      encoding.save
       # TODO delete tmpfiles
     end
 

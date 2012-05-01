@@ -1,10 +1,11 @@
 class Job::Base
 
-  attr :options
+  attr :options, :result_files
 
   def initialize options = {}
     raise "Can't initialize an abstract class instance" if self.class == Job::Base
     @options = options
+    @result_files = []
   end
 
   def perform

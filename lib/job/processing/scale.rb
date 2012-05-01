@@ -9,7 +9,7 @@ class Job::Scale < Job::Processing
           new_file.write "\nscaled to #{self.options[:scale]}!"
         end
     end
-    [new_file_path]
+    self.result_files = [new_file_path]
   end
 
 end

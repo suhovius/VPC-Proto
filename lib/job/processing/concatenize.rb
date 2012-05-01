@@ -1,5 +1,7 @@
 class Job::Concatenize < Job::Processing
 
+  MEDIA_TYPE = "audio"
+
   def perform
     new_file_path = "#{self.output_dir}/#{SecureRandom.uuid}.txt"
     File.open(new_file_path, "a") do |new_file|
@@ -9,7 +11,7 @@ class Job::Concatenize < Job::Processing
         end
       end
     end
-    [new_file_path]
+    self.result_files = [new_file_path]
   end
 
 end

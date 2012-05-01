@@ -18,7 +18,7 @@ class Job::Downloader < Job::Base
       raise 'File not exists' unless File.exists? new_file_path
       output_files_array << new_file_path
     end
-    output_files_array
+    self.result_files = output_files_array
   end
 
 end

@@ -9,7 +9,7 @@ class Job::Rotate < Job::Processing
           new_file.write "\nrotated!"
         end
     end
-    [new_file_path]
+    self.result_files = [new_file_path]
   end
 
 end

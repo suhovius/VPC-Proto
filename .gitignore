@@ -5,3 +5,6 @@ bin/*
 vendor/gems/*
 !vendor/gems/cache/
 .sass-cache/*
+spec/fixtures/S3_bucket/results/**
+!spec/fixtures/S3_bucket/results/.gitignore
+
